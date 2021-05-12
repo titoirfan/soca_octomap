@@ -1,0 +1,29 @@
+<launch>
+  <!-- Robot spawn coordinates -->
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+
+  <!-- Spawn world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find soca_octomap)/example/worlds/block_and_cylinder.world"/>
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" default="true"/>
+  </include>
+  
+  <!-- Example robot model path -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find soca_octomap)/example/urdf/example.urdf.xacro" />
+
+  <!-- Spawn example robot model -->
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model example -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+
+  <!-- Joint & link transformations -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+  <!-- Pose ground truth tf transformations -->
+  <include file="$(find soca_octomap)/launch/velodyne_tf.launch" />
+</launch>
