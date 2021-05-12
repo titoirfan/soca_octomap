@@ -1,0 +1,32 @@
+<launch>
+	<arg name="map_path" default=""/>
+	<node pkg="soca_octomap" type="octomap_dose_server_node" name="octomap_dose_server" output="screen"
+	args="$(arg map_path)">
+		<param name="frequency" value="10" />
+
+		<param name="resolution" value="0.05" />
+		
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="map_3d" />
+		
+		<!-- maximum range to integrate (speedup!) -->
+		<param name="sensor_model/max_range" value="1.5" />
+		<param name="sensor_model/hit" value="0.51" />
+		<param name="sensor_model/miss" value="0.49" />
+		
+		<!-- data source to integrate (PointCloud2) -->
+		<remap from="cloud_in" to="/velodyne_points" />
+		<param name="latch" value="false" />
+		<param name="filter_ground" value="false" />
+		<param name="filter_speckles" value="true" />
+
+		<!-- RViz -->
+		<param name="height_map" value="false" />
+		<param name="colored_map" value="true" />
+
+		<!-- UV disinfection params -->
+		<param name="uv_power" value="480.0" />
+		<param name="uv_timestep" value="0.1" />
+		<param name="uv_dose_threshold" value="27.0" />
+	</node>
+</launch>

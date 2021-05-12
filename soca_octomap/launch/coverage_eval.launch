@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>    
+  <node name="coverage_eval_node" pkg="soca_octomap" type="coverage_eval_node" output="screen">
+    <rosparam command="load" file="$(find soca_octomap)/config/coverage_eval_config.yaml" />
+  </node>
+</launch>
