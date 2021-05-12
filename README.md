@@ -1,10 +1,16 @@
 # soca_octomap
+**Author:** [Irfan Tito Kurniawan](https://github.com/titoirfan)
 
-An ultraviolet-C (UV-C) irradiation simulation and evaluation implementation in Gazebo and ROS.
+An ultraviolet-C (UV-C) irradiation simulation and evaluation implementation in Gazebo and ROS. The simulation is made possible by modelling the UV-C irradiation system as a 3D LIDAR and representing the environment as a voxel map. The evaluation functionality compares the irradiation simulation result to a reference map of the environment to calculate the total irradiation coverage.
 
 <img src="./docs/demo.png" height="200"/> <img src="./docs/map_building.gif" height="200"/> 
 
 <img src="./docs/map_meas.png" height="100"/> <img src="./docs/map_ref.png" height="100"/> <img src="./docs/map_diff.png" height="100"/> 
+
+### Related Publications:
+Widyawardana Adiprawita, Irfan Tito Kurniawan. **A Method of Ultraviolet-C Surface Irradiation Simulation and Evaluation**. Unpublished (Submitted).
+
+Irfan Tito Kurniawwan, Widyawardana Adiprawita. **Autonomy Design and Development for an Ultraviolet-C Healthcare Surface Disinfection Robot**. Unpublished (Submitted).
 
 # 1. Acknowledgement
 The development of this software won't be possible without the following open-source libraries and tools
@@ -59,7 +65,7 @@ cd .. && catkin_make && source ./devel/setup.bash
 <!-- Add these anywhere between world tags -->
 <plugin name='gazebo_octomap' filename='libBuildOctomapPlugin.so'/>
 ```
-2. Generate the binary ground truth Octomap of the environment by calling the plugin's service. Please note that the Octomap sizes should match and you may have to tune the z-origin parameter.
+2. Generate the binary ground truth Octomap of the environment by calling the plugin's service. Please note that the Octomap sizes should match and you may have to tune the z-origin parameter. See the example section for more information.
 3. Run the heatmap evaluator node for the full Dose Octomap file to be evaluated against the binary ground truth Octomap.
 
 # 5. Example
