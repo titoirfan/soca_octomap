@@ -2,7 +2,9 @@
 
 An ultraviolet-C (UV-C) irradiation simulation and evaluation implementation in Gazebo and ROS.
 
-# Acknowledgement
+![](./docs/demo.png)
+
+# 1. Acknowledgement
 The development of this software won't be possible without the following open-source libraries and tools
 - [octomap](https://github.com/OctoMap/octomap)
 - [octomap_mapping](https://github.com/OctoMap/octomap_mapping)
@@ -12,8 +14,9 @@ The development of this software won't be possible without the following open-so
 - [velodyne_simulator](https://bitbucket.org/DataspeedInc/velodyne_simulator/src/master/)
 - [hector_localization](https://github.com/tu-darmstadt-ros-pkg/hector_localization)
 - [rotors_simulator](https://github.com/ethz-asl/rotors_simulator)
+- [tinycolormap](https://github.com/yuki-koyama/tinycolormap)
 
-# Prerequisite
+# 2. Prerequisite
 
 We have tested the implementation in Ubuntu 20.04 with ROS Noetic and Gazebo 11.1.0.
 
@@ -23,7 +26,7 @@ We use functionalities provided by C++11.
 ## Octomap
 You will need to install [Octomap](https://octomap.github.io/) separately in your system.
 
-# Building soca_octomap
+# 3. Building soca_octomap
 
 Create a catkin workspace
 ```bash
