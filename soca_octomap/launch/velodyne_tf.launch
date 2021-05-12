@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="message_to_tf" type="message_to_tf" name="velodyne_tf">
+    <param name="frame_id" value="base_footprint" />
+    <param name="child_frame_id" value="map_3d" />
+    <param name="topic" value="/base_pose_gt" />
+    <param name="invert_tf" value="true" />
+  </node>
+</launch>
