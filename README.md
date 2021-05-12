@@ -44,3 +44,16 @@ Build and source the repository
 ```bash
 cd .. && catkin_make && source ./devel/setup.bash 
 ```
+
+# 4. Usage
+
+## Simulation
+1. Add a 3D LIDAR link and P3D ground truth pose publisher to your URDF and Gazebo model.
+2. Run the `message_to_tf` to create a `tf` expressing the ground truth pose between the map frame and the LIDAR link.
+3. Run the Dose Octomap Server node.
+4. When a satisfactory Dose Octomap is obtained, save the Dose Octomap using the Dose Octomap Saver node.
+
+## Evaluation
+1. Add the RotorS' Octomap Builder plugin to the `world` file of your environment.
+2. Generate the binary ground truth Octomap of the environment by calling the plugin's service.
+3. Run the heatmap evaluator node for the full Dose Octomap file to be evaluated against the binary ground truth Octomap.
