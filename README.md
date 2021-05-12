@@ -10,7 +10,7 @@ An ultraviolet-C (UV-C) irradiation simulation and evaluation implementation in 
 ### Related Publications:
 Widyawardana Adiprawita, Irfan Tito Kurniawan. **A Method of Ultraviolet-C Surface Irradiation Simulation and Evaluation**. Unpublished (Submitted).
 
-Irfan Tito Kurniawwan, Widyawardana Adiprawita. **Autonomy Design and Development for an Ultraviolet-C Healthcare Surface Disinfection Robot**. Unpublished (Submitted).
+Irfan Tito Kurniawan, Widyawardana Adiprawita. **Autonomy Design and Development for an Ultraviolet-C Healthcare Surface Disinfection Robot**. Unpublished (Submitted).
 
 # 1. Acknowledgement
 The development of this software won't be possible without the following open-source libraries and tools
@@ -111,4 +111,8 @@ rosservice call /world/build_octomap '{bounding_box_origin: {x: 0.0, y: 0, z: 0.
 3. Edit the file paths and area bounds in `heatmap_eval.config` and launch the evaluator node
 ```bash
 roslaunch soca_octomap heatmap_eval.launch
+```
+4. You can then visualize the difference Octomap
+```bash
+octovis ./src/soca_octomap/soca_octomap/example/octomaps/diff_octomap.bt
 ```
