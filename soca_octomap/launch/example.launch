@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <!-- Robot spawn coordinates -->
   <arg name="x_pos" default="0.0"/>

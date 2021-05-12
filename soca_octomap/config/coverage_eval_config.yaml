@@ -1,2 +1,2 @@
-measurement_octree_filename: /home/titoirfan/soca_simulation_ws/src/soca_simulation/soca_simulation/octomaps/map_block_and_cylinder_005.bt
-ground_truth_octree_filename: /home/titoirfan/soca_simulation_ws/src/soca_simulation/soca_simulation/octomaps/block_and_cylinder_005_hollow.bt
+measurement_octree_filename: /home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/soca_octomap/example/octomaps/meas_octomap.bt
+ground_truth_octree_filename: /home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/soca_octomap/example/octomaps/ref_octomap.bt

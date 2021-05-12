@@ -1,30 +1,13 @@
-measurement_octree_filename: /home/titoirfan/soca_data/coverage/measurements/WE1_R0K5.ot
-ground_truth_octree_filename: /home/titoirfan/soca_data/coverage/ground_truth/GT_WE1_ALL.bt
-dose_threshold: 27.0
+measurement_octree_filename: /home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/soca_octomap/example/octomaps/meas_octomap.ot
+ground_truth_octree_filename: /home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/soca_octomap/example/octomaps/ref_octomap.bt
+dose_threshold: 100.0
 
-save_difference_map: false
-difference_map_save_path: /home/titoirfan/soca_data/coverage/diff_map/WE1_H0K5_diff_map.bt
+save_difference_map: true
+difference_map_save_path: /home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/soca_octomap/example/octomaps/diff_octomap.bt
 
-# LOB
-# x_min: -9.0
-# x_max: 9.0
-# y_min: 4.0
-# y_max: 12.0
-# z_min: -0.05
-# z_max: 1.5
-
-#EXA
-# x_min: 9.0
-# x_max: 12.5
-# y_min: 8.0
-# y_max: 12.0
-# z_min: -0.05
-# z_max: 1.5
-
-# WE1
-x_min: 6.5
-x_max: 12.5
-y_min: -10.0
-y_max: 4.0
-z_min: -0.05
+x_min: -2.5
+x_max: 2.5
+y_min: -2.5
+y_max: 2.5
+z_min: -0.5
 z_max: 1.5

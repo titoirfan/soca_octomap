@@ -1,11 +1,6 @@
 <sdf version='1.7'>
   <world name='default'>
     <plugin name='gazebo_octomap' filename='libBuildOctomapPlugin.so'/>
-    <scene>
-      <ambient>0.4 0.4 0.4 1</ambient>
-      <background>0.7 0.7 0.7 1</background>
-      <shadows>1</shadows>
-    </scene>
     <light name='sun' type='directional'>
       <cast_shadows>1</cast_shadows>
       <pose>0 0 10 0 -0 0</pose>
@@ -72,29 +67,19 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <physics type='ode'>
-      <real_time_update_rate>1000</real_time_update_rate>
-      <max_step_size>0.001</max_step_size>
-      <real_time_factor>1</real_time_factor>
-      <ode>
-        <solver>
-          <type>quick</type>
-          <iters>150</iters>
-          <precon_iters>0</precon_iters>
-          <sor>1.4</sor>
-          <use_dynamic_moi_rescaling>1</use_dynamic_moi_rescaling>
-        </solver>
-        <constraints>
-          <cfm>1e-05</cfm>
-          <erp>0.2</erp>
-          <contact_max_correcting_vel>2000</contact_max_correcting_vel>
-          <contact_surface_layer>0.01</contact_surface_layer>
-        </constraints>
-      </ode>
-    </physics>
     <gravity>0 0 -9.8</gravity>
     <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
     <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
     <wind/>
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
@@ -103,8 +88,61 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
+    <model name='unit_box'>
+      <pose>1.07587 -1.02611 0.5 0 -0 0</pose>
+      <link name='link'>
+        <inertial>
+          <mass>1</mass>
+          <inertia>
+            <ixx>0.166667</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.166667</iyy>
+            <iyz>0</iyz>
+            <izz>0.166667</izz>
+          </inertia>
+          <pose>0 0 0 0 -0 0</pose>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>1 1 1</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
     <model name='unit_cylinder'>
-      <pose>-0.725119 -0.982152 0.5 0 -0 0</pose>
+      <pose>-0.799931 0.96316 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -158,8 +196,8 @@
         <kinematic>0</kinematic>
       </link>
     </model>
-    <model name='unit_box'>
-      <pose>0.993856 0.983644 0.5 0 -0 0</pose>
+    <model name='unit_box_0'>
+      <pose>-1.51627 -1.52021 0.5 0 -0 0</pose>
       <link name='link'>
         <inertial>
           <mass>1</mass>
@@ -212,20 +250,10 @@
       </link>
     </model>
     <state world_name='default'>
-      <sim_time>460 212000000</sim_time>
-      <real_time>195 563864260</real_time>
-      <wall_time>1620807640 748504550</wall_time>
-      <iterations>194988</iterations>
-      <model name='example'>
-        <pose>-0 0 -0 0 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='base_footprint'>
-          <pose>-0 0 -0 0 -0 0</pose>
-          <velocity>-0 0 0 0 -0 0</velocity>
-          <acceleration>-0 -0 -0 0 -0 0</acceleration>
-          <wrench>-0 -0 -0 0 -0 0</wrench>
-        </link>
-      </model>
+      <sim_time>34 407000000</sim_time>
+      <real_time>34 578529179</real_time>
+      <wall_time>1620809480 189979066</wall_time>
+      <iterations>34407</iterations>
       <model name='ground_plane'>
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -237,30 +265,30 @@
         </link>
       </model>
       <model name='unit_box'>
-        <pose>1.09558 1.09076 0.5 0 -0 0</pose>
+        <pose>1.07587 -1.02611 0.499995 0 1e-05 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>1.09558 1.09076 0.5 0 -0 0</pose>
+          <pose>1.07587 -1.02611 0.499995 0 1e-05 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -0 0 -0 0</acceleration>
-          <wrench>0 0 -0 0 -0 0</wrench>
+          <acceleration>0.010615 -0.006191 -9.78231 0.012424 0.021225 1.8e-05</acceleration>
+          <wrench>0.010615 -0.006191 -9.78231 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_box_0'>
-        <pose>-1.84102 1.86252 0.5 0 -0 0</pose>
+        <pose>-1.51627 -1.52021 0.5 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-1.84102 1.86252 0.5 0 -0 0</pose>
+          <pose>-1.51627 -1.52021 0.5 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>-0 -0 0 0 -0 0</acceleration>
-          <wrench>-0 -0 0 0 -0 0</wrench>
+          <acceleration>-0.004709 -9.78112 9.78158 0.712677 -0.009414 -4.3e-05</acceleration>
+          <wrench>-0.004709 -9.78112 9.78158 0 -0 0</wrench>
         </link>
       </model>
       <model name='unit_cylinder'>
-        <pose>-1.28539 -0.400388 0.499997 -4e-06 -4e-06 -0</pose>
+        <pose>-0.799933 0.963162 0.499993 -3e-06 -4e-06 -0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose>-1.28539 -0.400388 0.499997 -4e-06 -4e-06 -0</pose>
+          <pose>-0.799933 0.963162 0.499993 -3e-06 -4e-06 -0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 -9.8 0 -0 0</acceleration>
           <wrench>0 0 -9.8 0 -0 0</wrench>
@@ -272,215 +300,10 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>4.68761 -4.7805 13.9357 0 1.03164 2.2762</pose>
+        <pose>4.68709 4.21734 11.4128 0 1.05964 -2.407</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
     </gui>
-    <model name='example'>
-      <link name='base_footprint'>
-        <inertial>
-          <pose>0 0 0.083776 0 -0 0</pose>
-          <mass>10.84</mass>
-          <inertia>
-            <ixx>3.14813</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>3.14813</iyy>
-            <iyz>0</iyz>
-            <izz>3.00111</izz>
-          </inertia>
-        </inertial>
-        <collision name='base_footprint_fixed_joint_lump__base_link_collision'>
-          <pose>0 0 0.05 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.5 0.5 0.1</size>
-            </box>
-          </geometry>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <collision name='base_footprint_fixed_joint_lump__velodyne_base_link_collision_1'>
-          <pose>0 0 0.48585 0 -0 0</pose>
-          <geometry>
-            <cylinder>
-              <length>0.0717</length>
-              <radius>0.0516</radius>
-            </cylinder>
-          </geometry>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='base_footprint_fixed_joint_lump__base_link_visual'>
-          <pose>0 0 0.05 0 -0 0</pose>
-          <geometry>
-            <box>
-              <size>0.5 0.5 0.1</size>
-            </box>
-          </geometry>
-        </visual>
-        <visual name='base_footprint_fixed_joint_lump__velodyne_base_link_visual_1'>
-          <pose>0 0 0.45 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/gazebo_lib/velodyne_simulator/velodyne_description/meshes/VLP16_base_1.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <visual name='base_footprint_fixed_joint_lump__velodyne_base_link_visual_2'>
-          <pose>0 0 0.45 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/gazebo_lib/velodyne_simulator/velodyne_description/meshes/VLP16_base_2.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <visual name='base_footprint_fixed_joint_lump__velodyne_visual_3'>
-          <pose>0 0 0.45 0 -0 0</pose>
-          <geometry>
-            <mesh>
-              <scale>1 1 1</scale>
-              <uri>/home/titoirfan/etc/soca_octomap_ws/src/soca_octomap/gazebo_lib/velodyne_simulator/velodyne_description/meshes/VLP16_scan.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <gravity>1</gravity>
-        <velocity_decay/>
-        <sensor name='velodyne-VLP16' type='gpu_ray'>
-          <visualize>0</visualize>
-          <update_rate>10</update_rate>
-          <ray>
-            <scan>
-              <horizontal>
-                <samples>440</samples>
-                <resolution>1</resolution>
-                <min_angle>-3.14159</min_angle>
-                <max_angle>3.14159</max_angle>
-              </horizontal>
-              <vertical>
-                <samples>128</samples>
-                <resolution>1</resolution>
-                <min_angle>-1.0472</min_angle>
-                <max_angle>1.0472</max_angle>
-              </vertical>
-            </scan>
-            <range>
-              <min>0.3</min>
-              <max>4</max>
-              <resolution>0.001</resolution>
-            </range>
-            <noise>
-              <type>gaussian</type>
-              <mean>0</mean>
-              <stddev>0</stddev>
-            </noise>
-          </ray>
-          <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_velodyne_gpu_laser.so'>
-            <topicName>/velodyne_points</topicName>
-            <frameName>velodyne</frameName>
-            <organize_cloud>1</organize_cloud>
-            <min_range>0.2</min_range>
-            <max_range>3.0</max_range>
-            <gaussianNoise>0.0</gaussianNoise>
-            <robotNamespace>/</robotNamespace>
-          </plugin>
-          <pose>0 0 0.4877 0 -0 0</pose>
-        </sensor>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <static>0</static>
-      <plugin name='p3d_base_controller' filename='libgazebo_ros_p3d.so'>
-        <alwaysOn>1</alwaysOn>
-        <updateRate>100.0</updateRate>
-        <bodyName>base_footprint</bodyName>
-        <topicName>base_pose_gt</topicName>
-        <gaussianNoise>0.0</gaussianNoise>
-        <frameName>world</frameName>
-        <xyzOffsets>0 0 0</xyzOffsets>
-        <rpyOffsets>0 0 0</rpyOffsets>
-        <robotNamespace>/</robotNamespace>
-      </plugin>
-      <pose>0 0 0 0 -0 0</pose>
-    </model>
-    <model name='unit_box_0'>
-      <pose>-1.84102 1.86252 0.5 0 -0 0</pose>
-      <link name='link'>
-        <inertial>
-          <mass>1</mass>
-          <inertia>
-            <ixx>0.166667</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>0.166667</iyy>
-            <iyz>0</iyz>
-            <izz>0.166667</izz>
-          </inertia>
-          <pose>0 0 0 0 -0 0</pose>
-        </inertial>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <box>
-              <size>1 1 1</size>
-            </box>
-          </geometry>
-          <material>
-            <script>
-              <name>Gazebo/Grey</name>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-    </model>
   </world>
 </sdf>
