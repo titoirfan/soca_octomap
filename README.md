@@ -2,7 +2,11 @@
 
 An ultraviolet-C (UV-C) irradiation simulation and evaluation implementation in Gazebo and ROS.
 
-<img src="./docs/demo.png" height="300"/> <img src="./docs/map_building.gif" height="300"/> 
+<img src="./docs/demo.png" height="200"/> <img src="./docs/map_building.gif" height="200"/> 
+
+<img src="./docs/map_ref.png" height="200"/> <img src="./docs/map_diff.png" height="200"/>
+
+<img src="./docs/map_meas.png" height="200"/>
 
 # 1. Acknowledgement
 The development of this software won't be possible without the following open-source libraries and tools
