@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch>
 	<arg name="map_path" default=""/>
 	<node pkg="soca_octomap" type="octomap_dose_server_node" name="octomap_dose_server" output="screen"
