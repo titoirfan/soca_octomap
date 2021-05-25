@@ -1,4 +1,4 @@
-# soca_octomap
+# `soca_octomap`
 **Author:** [Irfan Tito Kurniawan](https://github.com/titoirfan)
 
 An ultraviolet-C (UV-C) irradiation simulation and evaluation implementation in Gazebo and ROS. The simulation is made possible by modelling the UV-C irradiation system as a 3D LIDAR and representing the environment as a voxel map. The evaluation functionality compares the irradiation simulation result to a reference map of the environment to calculate the total irradiation coverage.
