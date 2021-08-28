@@ -8,9 +8,9 @@ An ultraviolet-C (UV-C) irradiation simulation and evaluation implementation in 
 <img src="./docs/map_meas.png" height="100"/> <img src="./docs/map_ref.png" height="100"/> <img src="./docs/map_diff.png" height="100"/> 
 
 ### Related Publications:
-Irfan Tito Kurniawan, Widyawardana Adiprawita. **A Method of Ultraviolet-C Surface Irradiation Simulation and Evaluation**. Unpublished (Submitted).
+Kurniawan, I. T., & Adiprawita, W. (2021, June). A Method of Ultraviolet-C Surface Irradiation Simulation and Evaluation. In 2021 International Symposium on Electronics and Smart Devices (ISESD) (pp. 1-5). IEEE.
 
-Irfan Tito Kurniawan, Widyawardana Adiprawita. **Autonomy Design and Development for an Ultraviolet-C Healthcare Surface Disinfection Robot**. Unpublished (Submitted).
+Kurniawan, I. T., & Adiprawita, W. (2021, June). Autonomy Design and Development for an Ultraviolet-C Healthcare Surface Disinfection Robot. In 2021 International Symposium on Electronics and Smart Devices (ISESD) (pp. 1-6). IEEE.
 
 # 1. Acknowledgement
 The development of this software won't be possible without the following open-source libraries and tools
