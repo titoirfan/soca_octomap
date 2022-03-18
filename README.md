@@ -82,9 +82,9 @@ cd catkin_ws && source ./devel/setup.bash
 ```bash
 roslaunch soca_octomap example.launch
 ```
-3. Run RViz
+3. Run RViz and open the configuration file at `./src/soca_octomap/soca_octomap/example/rviz/example.rviz`
 ```bash
-rosrun rviz rviz -d ./src/soca_octomap/soca_octomap/example/rviz/example.rviz
+rosrun rviz rviz
 ```
 4. Launch the Dose Octomap Server node
 ```bash
